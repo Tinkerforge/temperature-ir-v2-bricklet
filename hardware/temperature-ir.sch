@@ -1,0 +1,586 @@
+EESchema Schematic File Version 2
+LIBS:tinkerforge
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:temperature-ir-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Temperature IR Bricklet"
+Date "2017-09-14"
+Rev "2.0"
+Comp "Tinkerforge GmbH"
+Comment1 "Licensed under CERN OHL v.1.1"
+Comment2 "Copyright (©) 2017, L.Lauer <lukas@tinkerforge.com>"
+Comment3 ""
+Comment4 ""
+$EndDescr
+Connection ~ 7900 3550
+Wire Wire Line
+	7900 2650 7900 3650
+Connection ~ 8450 4050
+Wire Wire Line
+	7900 4050 8450 4050
+Wire Wire Line
+	8850 3550 9750 3550
+Wire Wire Line
+	8450 4150 8450 3950
+Wire Wire Line
+	7900 3550 8050 3550
+$Comp
+L C C1
+U 1 1 4F90ED4D
+P 2100 1600
+F 0 "C1" V 2050 1650 50  0000 L CNN
+F 1 "10uF" H 2150 1500 50  0000 L CNN
+F 2 "kicad-libraries:C0805" H 2100 1600 60  0001 C CNN
+F 3 "" H 2100 1600 60  0001 C CNN
+	1    2100 1600
+	1    0    0    -1  
+$EndComp
+Text Notes 550  7750 0    40   ~ 0
+Copyright Tinkerforge GmbH 2017.\nThis documentation describes Open Hardware and is licensed under the\nCERN OHL v. 1.1.\nYou may redistribute and modify this documentation under the terms of the\nCERN OHL v.1.1. (http://ohwr.org/cernohl). This documentation is distributed\nWITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF\nMERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A\nPARTICULAR PURPOSE. Please see the CERN OHL v.1.1 for applicable\nconditions\n
+$Comp
+L GND #PWR01
+U 1 1 4D302F1F
+P 2650 1900
+F 0 "#PWR01" H 2650 1900 30  0001 C CNN
+F 1 "GND" H 2650 1830 30  0001 C CNN
+F 2 "" H 2650 1900 60  0001 C CNN
+F 3 "" H 2650 1900 60  0001 C CNN
+	1    2650 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 4D302F1D
+P 4400 5700
+F 0 "R1" V 4480 5700 50  0000 C CNN
+F 1 "10k" V 4400 5700 50  0000 C CNN
+F 2 "kicad-libraries:R0603F" H 4400 5700 60  0001 C CNN
+F 3 "" H 4400 5700 60  0001 C CNN
+	1    4400 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L VCC #PWR02
+U 1 1 4CF78252
+P 3550 5650
+F 0 "#PWR02" H 3550 5750 30  0001 C CNN
+F 1 "VCC" H 3550 5750 30  0000 C CNN
+F 2 "" H 3550 5650 60  0001 C CNN
+F 3 "" H 3550 5650 60  0001 C CNN
+	1    3550 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 4CF7824B
+P 4750 5550
+F 0 "#PWR03" H 4750 5550 30  0001 C CNN
+F 1 "GND" H 4750 5480 30  0001 C CNN
+F 2 "" H 4750 5550 60  0001 C CNN
+F 3 "" H 4750 5550 60  0001 C CNN
+	1    4750 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C3
+U 1 1 4CF77E04
+P 2650 1600
+F 0 "C3" V 2700 1450 50  0000 L CNN
+F 1 "1uF" H 2500 1700 50  0000 L CNN
+F 2 "kicad-libraries:C0603F" H 2650 1600 60  0001 C CNN
+F 3 "" H 2650 1600 60  0001 C CNN
+	1    2650 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L DRILL U6
+U 1 1 4C654438
+P 10700 6350
+F 0 "U6" H 10750 6400 60  0001 C CNN
+F 1 "DRILL" H 10700 6350 60  0000 C CNN
+F 2 "kicad-libraries:DRILL_NP" H 10700 6350 60  0001 C CNN
+F 3 "" H 10700 6350 60  0001 C CNN
+	1    10700 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L DRILL U4
+U 1 1 4C654436
+P 10700 6150
+F 0 "U4" H 10750 6200 60  0001 C CNN
+F 1 "DRILL" H 10700 6150 60  0000 C CNN
+F 2 "kicad-libraries:DRILL_NP" H 10700 6150 60  0001 C CNN
+F 3 "" H 10700 6150 60  0001 C CNN
+	1    10700 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L DRILL U7
+U 1 1 4C654434
+P 11000 6350
+F 0 "U7" H 11050 6400 60  0001 C CNN
+F 1 "DRILL" H 11000 6350 60  0000 C CNN
+F 2 "kicad-libraries:DRILL_NP" H 11000 6350 60  0001 C CNN
+F 3 "" H 11000 6350 60  0001 C CNN
+	1    11000 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L DRILL U5
+U 1 1 4C65442E
+P 11000 6150
+F 0 "U5" H 11050 6200 60  0001 C CNN
+F 1 "DRILL" H 11000 6150 60  0000 C CNN
+F 2 "kicad-libraries:DRILL_NP" H 11000 6150 60  0001 C CNN
+F 3 "" H 11000 6150 60  0001 C CNN
+	1    11000 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR04
+U 1 1 4C6540C6
+P 7900 2650
+F 0 "#PWR04" H 7900 2750 30  0001 C CNN
+F 1 "VCC" H 7900 2750 30  0000 C CNN
+F 2 "" H 7900 2650 60  0001 C CNN
+F 3 "" H 7900 2650 60  0001 C CNN
+	1    7900 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 4C6540BA
+P 8450 4150
+F 0 "#PWR05" H 8450 4150 30  0001 C CNN
+F 1 "GND" H 8450 4080 30  0001 C CNN
+F 2 "" H 8450 4150 60  0001 C CNN
+F 3 "" H 8450 4150 60  0001 C CNN
+	1    8450 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 4C653F82
+P 1850 2600
+F 0 "C2" H 1900 2700 50  0000 L CNN
+F 1 "220pF" H 1900 2500 50  0000 L CNN
+F 2 "kicad-libraries:C0402E" H 1850 2600 60  0001 C CNN
+F 3 "" H 1850 2600 60  0001 C CNN
+	1    1850 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L MLX90614 U2
+U 1 1 4C653F6C
+P 8450 3550
+F 0 "U2" H 8250 3800 60  0000 C CNN
+F 1 "MLX90614" H 8750 3250 60  0000 C CNN
+F 2 "kicad-libraries:TO-39" H 8450 3550 60  0001 C CNN
+F 3 "" H 8450 3550 60  0001 C CNN
+	1    8450 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR06
+U 1 1 4C5FD35E
+P 4700 6250
+F 0 "#PWR06" H 4700 6350 30  0001 C CNN
+F 1 "VCC" H 4700 6350 30  0000 C CNN
+F 2 "" H 4700 6250 60  0001 C CNN
+F 3 "" H 4700 6250 60  0001 C CNN
+	1    4700 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR07
+U 1 1 4C5FCFB4
+P 2650 1300
+F 0 "#PWR07" H 2650 1400 30  0001 C CNN
+F 1 "VCC" H 2650 1400 30  0000 C CNN
+F 2 "" H 2650 1300 60  0001 C CNN
+F 3 "" H 2650 1300 60  0001 C CNN
+	1    2650 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L CON-SENSOR2 P1
+U 1 1 59BA3E42
+P 1350 2050
+F 0 "P1" H 1200 2450 60  0000 C CNN
+F 1 "CON-SENSOR2" V 1500 2050 60  0000 C CNN
+F 2 "kicad-libraries:CON-SENSOR2" H 1450 1900 60  0001 C CNN
+F 3 "" H 1450 1900 60  0000 C CNN
+	1    1350 2050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L XMC1XXX24 U1
+U 1 1 59BA4A7A
+P 5300 6650
+F 0 "U1" H 5150 7050 60  0000 C CNN
+F 1 "XMC1XXX24" H 5300 6250 60  0000 C CNN
+F 2 "kicad-libraries:QFN24-4x4mm-0.5mm" H 5450 7400 60  0001 C CNN
+F 3 "" H 5450 7400 60  0000 C CNN
+	1    5300 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L XMC1XXX24 U1
+U 2 1 59BA4B31
+P 5300 3400
+F 0 "U1" H 5150 3950 60  0000 C CNN
+F 1 "XMC1XXX24" H 5300 2850 60  0000 C CNN
+F 2 "kicad-libraries:QFN24-4x4mm-0.5mm" H 5450 4150 60  0001 C CNN
+F 3 "" H 5450 4150 60  0000 C CNN
+	2    5300 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L XMC1XXX24 U1
+U 4 1 59BA4B77
+P 5300 5450
+F 0 "U1" H 5150 5900 60  0000 C CNN
+F 1 "XMC1XXX24" H 5300 5000 60  0000 C CNN
+F 2 "kicad-libraries:QFN24-4x4mm-0.5mm" H 5450 6200 60  0001 C CNN
+F 3 "" H 5450 6200 60  0000 C CNN
+	4    5300 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L XMC1XXX24 U1
+U 3 1 59BA4BC8
+P 5300 4500
+F 0 "U1" H 5150 4750 60  0000 C CNN
+F 1 "XMC1XXX24" H 5300 4250 60  0000 C CNN
+F 2 "kicad-libraries:QFN24-4x4mm-0.5mm" H 5450 5250 60  0001 C CNN
+F 3 "" H 5450 5250 60  0000 C CNN
+	3    5300 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1850 2650 1850
+Wire Wire Line
+	2650 1800 2650 1900
+Wire Wire Line
+	2100 1800 2100 1850
+Connection ~ 2100 1850
+Wire Wire Line
+	1700 1950 1850 1950
+Wire Wire Line
+	1850 1950 1850 1350
+Wire Wire Line
+	1850 1350 2650 1350
+Wire Wire Line
+	2650 1300 2650 1400
+Wire Wire Line
+	2100 1350 2100 1400
+Connection ~ 2100 1350
+Connection ~ 2650 1350
+Connection ~ 2650 1850
+$Comp
+L +5V #PWR08
+U 1 1 59BA5B6B
+P 1750 1300
+F 0 "#PWR08" H 1750 1150 50  0001 C CNN
+F 1 "+5V" H 1750 1440 50  0000 C CNN
+F 2 "" H 1750 1300 50  0000 C CNN
+F 3 "" H 1750 1300 50  0000 C CNN
+	1    1750 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1750 1750 1750
+Wire Wire Line
+	1750 1750 1750 1300
+$Comp
+L R_PACK4 RP1
+U 1 1 59BA5CAA
+P 2200 2400
+F 0 "RP1" H 2200 2850 50  0000 C CNN
+F 1 "82" H 2200 2350 50  0000 C CNN
+F 2 "kicad-libraries:4X0402" H 2200 2400 50  0001 C CNN
+F 3 "" H 2200 2400 50  0000 C CNN
+	1    2200 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 2050 2000 2050
+Wire Wire Line
+	2000 2150 1700 2150
+Wire Wire Line
+	1700 2250 2000 2250
+Wire Wire Line
+	2000 2350 1700 2350
+Wire Wire Line
+	1850 2400 1850 2350
+Connection ~ 1850 2350
+Wire Wire Line
+	2400 2050 2850 2050
+Wire Wire Line
+	2400 2150 2850 2150
+Wire Wire Line
+	2400 2250 2850 2250
+Wire Wire Line
+	2400 2350 2850 2350
+Text GLabel 2850 2050 2    47   Output ~ 0
+S-CD
+Text GLabel 2850 2150 2    47   Output ~ 0
+S-CLK
+Text GLabel 2850 2250 2    47   Output ~ 0
+S-MOSI
+Text GLabel 2850 2350 2    47   Input ~ 0
+S-MISO
+$Comp
+L GND #PWR09
+U 1 1 59BA6179
+P 1850 2850
+F 0 "#PWR09" H 1850 2850 30  0001 C CNN
+F 1 "GND" H 1850 2780 30  0001 C CNN
+F 2 "" H 1850 2850 60  0001 C CNN
+F 3 "" H 1850 2850 60  0001 C CNN
+	1    1850 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 59BA61DC
+P 1350 2850
+F 0 "#PWR010" H 1350 2850 30  0001 C CNN
+F 1 "GND" H 1350 2780 30  0001 C CNN
+F 2 "" H 1350 2850 60  0001 C CNN
+F 3 "" H 1350 2850 60  0001 C CNN
+	1    1350 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 2800 1850 2850
+Wire Wire Line
+	1350 2500 1350 2850
+$Comp
+L CONN_01X01 P2
+U 1 1 59BA6D70
+P 4400 2950
+F 0 "P2" H 4400 3050 50  0000 C CNN
+F 1 "DEBUG" V 4500 2950 50  0000 C CNN
+F 2 "kicad-libraries:DEBUG_PAD" H 4400 2950 50  0001 C CNN
+F 3 "" H 4400 2950 50  0000 C CNN
+	1    4400 2950
+	-1   0    0    1   
+$EndComp
+Text GLabel 4850 3650 0    47   Input ~ 0
+S-CS
+Text GLabel 4850 3850 0    47   Input ~ 0
+S-MOSI
+Text GLabel 4850 5100 0    47   Output ~ 0
+S-MISO
+Text GLabel 4850 3750 0    47   Input ~ 0
+S-CLK
+Text GLabel 4850 3150 0    47   Output ~ 0
+SDA
+Text GLabel 4850 3350 0    47   Output ~ 0
+SCL
+Wire Wire Line
+	4600 2950 4950 2950
+Wire Wire Line
+	4950 3150 4850 3150
+Wire Wire Line
+	4850 3350 4950 3350
+Wire Wire Line
+	4850 3650 4950 3650
+Wire Wire Line
+	4950 3750 4850 3750
+Wire Wire Line
+	4850 3850 4950 3850
+Wire Wire Line
+	4950 5100 4850 5100
+NoConn ~ 4950 3450
+NoConn ~ 4950 3550
+NoConn ~ 4950 3050
+NoConn ~ 4950 3250
+Text Notes 5600 3350 0    39   ~ 0
+I2C Master/CH1\nP0.6 :USIC0_CH1-DOUT0/DX0C : SDA\nP0.8: USIC0_CH1-SCLKOUT/DX1B : SCL
+Text Notes 5600 3900 0    39   ~ 0
+SPI Slave/CH0\nP0.13 : USIC0_CH0-DX2F : SEL\nP0.14 : USIC0_CH0-DX1A : CLK\nP0.15 : USIC0_CH0-DX0B : MOSI\nP2.0 : USIC0_CH0-DOUT0 : MISO
+NoConn ~ 4950 4650
+NoConn ~ 4950 4550
+NoConn ~ 4950 4450
+NoConn ~ 4950 4350
+$Comp
+L CONN_01X02 P3
+U 1 1 59BA81CB
+P 4450 5450
+F 0 "P3" H 4450 5600 50  0000 C CNN
+F 1 "BOOT" V 4550 5450 50  0000 C CNN
+F 2 "kicad-libraries:SolderJumper" H 4450 5350 50  0001 C CNN
+F 3 "" H 4450 5350 50  0000 C CNN
+	1    4450 5450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4950 5400 4650 5400
+Wire Wire Line
+	4650 5500 4750 5500
+Wire Wire Line
+	4750 5500 4750 5550
+NoConn ~ 4950 5200
+NoConn ~ 4950 5300
+NoConn ~ 4950 5500
+NoConn ~ 4950 5600
+NoConn ~ 4950 5800
+$Comp
+L LED D1
+U 1 1 59BA87AC
+P 3800 5700
+F 0 "D1" H 3800 5800 50  0000 C CNN
+F 1 "blue" H 3800 5600 50  0000 C CNN
+F 2 "kicad-libraries:D0603E" H 3800 5700 50  0001 C CNN
+F 3 "" H 3800 5700 50  0000 C CNN
+	1    3800 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 5700 4950 5700
+Wire Wire Line
+	4150 5700 4000 5700
+Wire Wire Line
+	3600 5700 3550 5700
+Wire Wire Line
+	3550 5700 3550 5650
+$Comp
+L C C4
+U 1 1 59BA8C8B
+P 4700 6600
+F 0 "C4" H 4750 6700 50  0000 L CNN
+F 1 "100nF" H 4750 6500 50  0000 L CNN
+F 2 "kicad-libraries:C0603F" H 4700 6600 60  0001 C CNN
+F 3 "" H 4700 6600 60  0001 C CNN
+	1    4700 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 59BA8F1C
+P 4700 7000
+F 0 "#PWR011" H 4700 7000 30  0001 C CNN
+F 1 "GND" H 4700 6930 30  0001 C CNN
+F 2 "" H 4700 7000 60  0001 C CNN
+F 3 "" H 4700 7000 60  0001 C CNN
+	1    4700 7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 6950 4700 6950
+Wire Wire Line
+	4700 6800 4700 7000
+Wire Wire Line
+	4950 6850 4700 6850
+Connection ~ 4700 6950
+Connection ~ 4700 6850
+Wire Wire Line
+	4700 6400 4700 6250
+Wire Wire Line
+	4950 6350 4700 6350
+Connection ~ 4700 6350
+$Comp
+L C C5
+U 1 1 59BA9408
+P 7900 3850
+F 0 "C5" H 7950 3950 50  0000 L CNN
+F 1 "100nF" H 7950 3750 50  0000 L CNN
+F 2 "kicad-libraries:C0603F" H 7900 3850 60  0001 C CNN
+F 3 "" H 7900 3850 60  0001 C CNN
+	1    7900 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_PACK4 RP2
+U 1 1 59BA97C0
+P 9200 2950
+F 0 "RP2" H 9200 3400 50  0000 C CNN
+F 1 "2k2" H 9200 2900 50  0000 C CNN
+F 2 "kicad-libraries:4X0402" H 9200 2950 50  0001 C CNN
+F 3 "" H 9200 2950 50  0000 C CNN
+	1    9200 2950
+	0    1    1    0   
+$EndComp
+Text GLabel 9750 3350 2    47   Input ~ 0
+SDA
+Text GLabel 9750 3550 2    47   Input ~ 0
+SCL
+NoConn ~ 9450 3150
+NoConn ~ 9350 3150
+Wire Wire Line
+	9750 3350 8750 3350
+Wire Wire Line
+	8750 3350 8750 3100
+Wire Wire Line
+	8750 3100 8450 3100
+Wire Wire Line
+	8450 3100 8450 3150
+Wire Wire Line
+	9550 3150 9550 3550
+Connection ~ 9550 3550
+Wire Wire Line
+	9250 3350 9300 3350
+Wire Wire Line
+	9250 3150 9250 3350
+Connection ~ 9250 3350
+Wire Wire Line
+	9250 2750 9250 2700
+Wire Wire Line
+	9250 2700 9550 2700
+Wire Wire Line
+	9550 2700 9550 2750
+Wire Wire Line
+	9350 2750 9350 2700
+Connection ~ 9350 2700
+Wire Wire Line
+	9450 2750 9450 2700
+Connection ~ 9450 2700
+Wire Wire Line
+	9400 2700 9400 2650
+Connection ~ 9400 2700
+$Comp
+L VCC #PWR012
+U 1 1 59BABDA5
+P 9400 2650
+F 0 "#PWR012" H 9400 2750 30  0001 C CNN
+F 1 "VCC" H 9400 2750 30  0000 C CNN
+F 2 "" H 9400 2650 60  0001 C CNN
+F 3 "" H 9400 2650 60  0001 C CNN
+	1    9400 2650
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
