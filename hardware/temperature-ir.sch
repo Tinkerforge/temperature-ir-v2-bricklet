@@ -29,7 +29,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:temperature-ir-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -112,17 +111,6 @@ F 2 "" H 4750 5550 60  0001 C CNN
 F 3 "" H 4750 5550 60  0001 C CNN
 	1    4750 5550
 	1    0    0    -1  
-$EndComp
-$Comp
-L C C3
-U 1 1 4CF77E04
-P 2650 1600
-F 0 "C3" V 2700 1450 50  0000 L CNN
-F 1 "1uF" H 2500 1700 50  0000 L CNN
-F 2 "kicad-libraries:C0603F" H 2650 1600 60  0001 C CNN
-F 3 "" H 2650 1600 60  0001 C CNN
-	1    2650 1600
-	-1   0    0    1   
 $EndComp
 $Comp
 L DRILL U6
@@ -355,7 +343,7 @@ Wire Wire Line
 Wire Wire Line
 	2400 2350 2850 2350
 Text GLabel 2850 2050 2    47   Output ~ 0
-S-CD
+S-CS
 Text GLabel 2850 2150 2    47   Output ~ 0
 S-CLK
 Text GLabel 2850 2250 2    47   Output ~ 0
@@ -530,7 +518,7 @@ U 1 1 59BA97C0
 P 9200 2950
 F 0 "RP2" H 9200 3400 50  0000 C CNN
 F 1 "2k2" H 9200 2900 50  0000 C CNN
-F 2 "kicad-libraries:4X0402" H 9200 2950 50  0001 C CNN
+F 2 "kicad-libraries:4X0603" H 9200 2950 50  0001 C CNN
 F 3 "" H 9200 2950 50  0000 C CNN
 	1    9200 2950
 	0    1    1    0   
@@ -582,5 +570,16 @@ F 2 "" H 9400 2650 60  0001 C CNN
 F 3 "" H 9400 2650 60  0001 C CNN
 	1    9400 2650
 	1    0    0    -1  
+$EndComp
+$Comp
+L C C3
+U 1 1 4CF77E04
+P 2650 1600
+F 0 "C3" V 2700 1450 50  0000 L CNN
+F 1 "1uF" H 2500 1700 50  0000 L CNN
+F 2 "kicad-libraries:C0603F" H 2650 1600 60  0001 C CNN
+F 3 "" H 2650 1600 60  0001 C CNN
+	1    2650 1600
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
