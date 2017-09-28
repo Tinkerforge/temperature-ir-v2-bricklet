@@ -84,12 +84,17 @@ void mlx90614_init(void) {
 
 	i2c_fifo_init(&mlx90614.i2c_fifo);
 
-	system_timer_sleep_ms(100);
+	mlx90614.sleep_time = system_timer_get_ms();
 }
 
 void mlx90614_tick(void) {
 	I2CFifoState state = i2c_fifo_next_state(&mlx90614.i2c_fifo);
 
+	if(!system_timer_is_time_elapsed_ms(mlx90614.sleep_time, 50)) {
+		return;
+	}
+
+	// TODO: Add timeout as error condition?
 	if(state & I2C_FIFO_STATE_ERROR) {
 		loge("MLX90614 I2C error: %d\n\r", state);
 		mlx90614_init();
