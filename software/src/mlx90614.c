@@ -127,7 +127,9 @@ void mlx90614_tick(void) {
 			uint16_t value = buffer[0] | (buffer[1] << 8);
 			switch(mlx90614.get_state) {
 				case MLX90614_GET_STATE_EMISSIVITY: {
-					mlx90614.emissivity = value;
+					// It seems like on initial boot-up the emissivity reads 0, when it is 0xFFFF.
+					// Is this documented somewhere?
+					mlx90614.emissivity = value == 0 ? 0xFFFF : value;
 					mlx90614.emissivity_get = false;
 					break;
 				}
