@@ -118,7 +118,7 @@ void mlx90614_tick(void) {
 			pec_data[3] = buffer[0];
 			pec_data[4] = buffer[1];
 			uint8_t pec = mlx90614_calculate_pec(pec_data, 5);
-			if(pec == buffer[2]) {
+			if(pec != buffer[2]) {
 				return; // If checksum is not OK we try again
 			}
 
