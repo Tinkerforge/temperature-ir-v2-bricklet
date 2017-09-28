@@ -25,7 +25,7 @@
 #include "xmc_gpio.h"
 #include "xmc_i2c.h"
 
-#define MLX90614_I2C_BAUDRATE         20000 // TODO: Test proper speed
+#define MLX90614_I2C_BAUDRATE         20000
 
 #define MLX90614_I2C_ADDRESS          0b1101000
 #define MLX90614_I2C                  XMC_I2C0_CH1
