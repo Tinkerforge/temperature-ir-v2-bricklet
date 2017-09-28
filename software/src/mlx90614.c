@@ -175,35 +175,7 @@ void mlx90614_tick(void) {
 		}
 
 		case I2C_FIFO_STATE_IDLE: {
-			if(mlx90614.emissivity_get) {
-				i2c_fifo_read_register(&mlx90614.i2c_fifo, MLX90614_REG_EMISSIVITY, MLX90614_DATA_LENGTH);
-			} else if(mlx90614.emissivity_set != MLX90614_SET_EMISSIVITY_STATE_NONE) {
-				// Check minimum value
-				uint16_t emissivity = mlx90614.emissivity;
-				if(emissivity < (0xFFFF/10 + 1)) {
-					emissivity = (0xFFFF/10 + 1);
-				}
-
-				// Construct dummy packet to calculate pec
-				uint8_t data[5];
-				data[0] = MLX90614_I2C_ADDRESS << 1;
-				data[1] = MLX90614_REG_EMISSIVITY;
-				if(mlx90614.emissivity_set == MLX90614_SET_EMISSIVITY_STATE_ERASE) {
-					data[2] = 0;
-					data[3] = 0;
-				} else {
-					data[2] = emissivity        & 0xFF;
-					data[3] = (emissivity >> 8) & 0xFF;
-				}
-				data[4] = mlx90614_calculate_pec(data, 4);
-
-				i2c_fifo_write_register(&mlx90614.i2c_fifo, MLX90614_REG_EMISSIVITY, MLX90614_DATA_LENGTH, &data[2], true);
-			} else if(mlx90614.read_ambient) {
-				i2c_fifo_read_register(&mlx90614.i2c_fifo, MLX90614_REG_TA, MLX90614_DATA_LENGTH);
-			} else {
-				i2c_fifo_read_register(&mlx90614.i2c_fifo, MLX90614_REG_TOBJ1, MLX90614_DATA_LENGTH);
-			}
-			break;
+			break; // Handled below
 		}
 
 		default: {
@@ -214,6 +186,42 @@ void mlx90614_tick(void) {
 			}
 			return;
 		}
+	}
+
+	if((state == I2C_FIFO_STATE_IDLE) || (state & I2C_FIFO_STATE_READY)) {
+		if(mlx90614.emissivity_get) {
+			mlx90614.get_state = MLX90614_GET_STATE_EMISSIVITY;
+			i2c_fifo_read_register(&mlx90614.i2c_fifo, MLX90614_REG_EMISSIVITY, MLX90614_DATA_LENGTH);
+		} else if(mlx90614.emissivity_set != MLX90614_SET_EMISSIVITY_STATE_NONE) {
+			// Check minimum value
+			uint16_t emissivity = mlx90614.emissivity;
+			if(emissivity < (0xFFFF/10 + 1)) {
+				emissivity = (0xFFFF/10 + 1);
+			}
+
+			// Construct dummy packet to calculate pec
+			uint8_t data[5];
+			data[0] = MLX90614_I2C_ADDRESS << 1;
+			data[1] = MLX90614_REG_EMISSIVITY;
+			if(mlx90614.emissivity_set == MLX90614_SET_EMISSIVITY_STATE_ERASE) {
+				data[2] = 0;
+				data[3] = 0;
+			} else {
+				data[2] = emissivity        & 0xFF;
+				data[3] = (emissivity >> 8) & 0xFF;
+			}
+			data[4] = mlx90614_calculate_pec(data, 4);
+
+			i2c_fifo_write_register(&mlx90614.i2c_fifo, MLX90614_REG_EMISSIVITY, MLX90614_DATA_LENGTH, &data[2], true);
+		} else if(mlx90614.read_ambient) {
+			mlx90614.get_state = MLX90614_GET_STATE_AMBIENT;
+			i2c_fifo_read_register(&mlx90614.i2c_fifo, MLX90614_REG_TA, MLX90614_DATA_LENGTH);
+		} else {
+			mlx90614.get_state = MLX90614_GET_STATE_OBJECT;
+			i2c_fifo_read_register(&mlx90614.i2c_fifo, MLX90614_REG_TOBJ1, MLX90614_DATA_LENGTH);
+		}
+
+		mlx90614.sleep_time = system_timer_get_ms();
 	}
 }
 
