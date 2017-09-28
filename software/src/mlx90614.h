@@ -52,6 +52,8 @@ typedef struct {
 	uint16_t temperature_object;
 
 	bool read_ambient;
+
+	uint32_t sleep_time;
 } MLX90614;
 
 void mlx90614_init(void);
