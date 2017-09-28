@@ -57,6 +57,8 @@ static int16_t mlx90614_value_to_celsius(const uint16_t value) {
 
 
 void mlx90614_init(void) {
+	memset(&mlx90614, 0, sizeof(MLX90614));
+
 	mlx90614.emissivity_set = MLX90614_SET_EMISSIVITY_STATE_NONE;
 	mlx90614.emissivity_get = true; // After initialization we always read the emissivity at first
 
