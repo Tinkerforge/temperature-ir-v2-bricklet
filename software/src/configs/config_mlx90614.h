@@ -27,7 +27,7 @@
 
 #define MLX90614_I2C_BAUDRATE         20000
 
-#define MLX90614_I2C_ADDRESS          0b1101000
+#define MLX90614_I2C_ADDRESS          0b1011010
 #define MLX90614_I2C                  XMC_I2C0_CH1
 
 #define MLX90614_SCL_PORT             XMC_GPIO_PORT0
