@@ -1,4 +1,4 @@
-update=Fr 04 Aug 2017 15:02:44 CEST
+update=Mi 18 Okt 2017 14:44:27 CEST
 version=1
 last_client=kicad
 [cvpcb]
@@ -47,7 +47,7 @@ LibName12=Logo
 LibName13=tinkerforge
 [eeschema]
 version=1
-LibDir=kicad-libraries
+LibDir=kicad-libraries.pretty
 [eeschema/libraries]
 LibName1=tinkerforge
 LibName2=power

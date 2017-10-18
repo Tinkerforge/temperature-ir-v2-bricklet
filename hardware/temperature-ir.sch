@@ -35,11 +35,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Temperature IR Bricklet"
-Date "2017-09-14"
+Date "2017-10-18"
 Rev "2.0"
 Comp "Tinkerforge GmbH"
 Comment1 "Licensed under CERN OHL v.1.1"
-Comment2 "Copyright (©) 2017, L.Lauer <lukas@tinkerforge.com>"
+Comment2 "Copyright (©) 2017, B.Nordmeyer <bastian@tinkerforge.com>"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -104,12 +104,12 @@ $EndComp
 $Comp
 L GND #PWR03
 U 1 1 4CF7824B
-P 4750 5550
-F 0 "#PWR03" H 4750 5550 30  0001 C CNN
-F 1 "GND" H 4750 5480 30  0001 C CNN
-F 2 "" H 4750 5550 60  0001 C CNN
-F 3 "" H 4750 5550 60  0001 C CNN
-	1    4750 5550
+P 4100 3100
+F 0 "#PWR03" H 4100 3100 30  0001 C CNN
+F 1 "GND" H 4100 3030 30  0001 C CNN
+F 2 "" H 4100 3100 60  0001 C CNN
+F 3 "" H 4100 3100 60  0001 C CNN
+	1    4100 3100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -379,12 +379,12 @@ Wire Wire Line
 $Comp
 L CONN_01X01 P2
 U 1 1 59BA6D70
-P 4400 2950
-F 0 "P2" H 4400 3050 50  0000 C CNN
-F 1 "DEBUG" V 4500 2950 50  0000 C CNN
-F 2 "kicad-libraries:DEBUG_PAD" H 4400 2950 50  0001 C CNN
-F 3 "" H 4400 2950 50  0000 C CNN
-	1    4400 2950
+P 4400 3050
+F 0 "P2" H 4400 3150 50  0000 C CNN
+F 1 "DEBUG" V 4500 3050 50  0000 C CNN
+F 2 "kicad-libraries:DEBUG_PAD" H 4400 3050 50  0001 C CNN
+F 3 "" H 4400 3050 50  0000 C CNN
+	1    4400 3050
 	-1   0    0    1   
 $EndComp
 Text GLabel 4850 3650 0    47   Input ~ 0
@@ -400,7 +400,7 @@ SDA
 Text GLabel 4850 3350 0    47   Output ~ 0
 SCL
 Wire Wire Line
-	4600 2950 4950 2950
+	4600 3050 4950 3050
 Wire Wire Line
 	4950 3150 4850 3150
 Wire Wire Line
@@ -415,7 +415,6 @@ Wire Wire Line
 	4950 5100 4850 5100
 NoConn ~ 4950 3450
 NoConn ~ 4950 3550
-NoConn ~ 4950 3050
 NoConn ~ 4950 3250
 Text Notes 5600 3350 0    39   ~ 0
 I2C Master/CH1\nP0.6 :USIC0_CH1-DOUT0/DX0C : SDA\nP0.8: USIC0_CH1-SCLKOUT/DX1B : SCL
@@ -428,20 +427,20 @@ NoConn ~ 4950 4350
 $Comp
 L CONN_01X02 P3
 U 1 1 59BA81CB
-P 4450 5450
-F 0 "P3" H 4450 5600 50  0000 C CNN
-F 1 "BOOT" V 4550 5450 50  0000 C CNN
-F 2 "kicad-libraries:SolderJumper" H 4450 5350 50  0001 C CNN
-F 3 "" H 4450 5350 50  0000 C CNN
-	1    4450 5450
+P 3800 3000
+F 0 "P3" H 3800 3150 50  0000 C CNN
+F 1 "BOOT" V 3900 3000 50  0000 C CNN
+F 2 "kicad-libraries:SolderJumper" H 3800 2900 50  0001 C CNN
+F 3 "" H 3800 2900 50  0000 C CNN
+	1    3800 3000
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	4950 5400 4650 5400
+	4000 2950 4950 2950
 Wire Wire Line
-	4650 5500 4750 5500
+	4000 3050 4100 3050
 Wire Wire Line
-	4750 5500 4750 5550
+	4100 3050 4100 3100
 NoConn ~ 4950 5200
 NoConn ~ 4950 5300
 NoConn ~ 4950 5500
@@ -518,7 +517,7 @@ U 1 1 59BA97C0
 P 9200 2950
 F 0 "RP2" H 9200 3400 50  0000 C CNN
 F 1 "2k2" H 9200 2900 50  0000 C CNN
-F 2 "kicad-libraries:4X0603" H 9200 2950 50  0001 C CNN
+F 2 "kicad-libraries:4X0402" H 9200 2950 50  0001 C CNN
 F 3 "" H 9200 2950 50  0000 C CNN
 	1    9200 2950
 	0    1    1    0   
@@ -582,4 +581,5 @@ F 3 "" H 2650 1600 60  0001 C CNN
 	1    2650 1600
 	-1   0    0    1   
 $EndComp
+NoConn ~ 4950 5400
 $EndSCHEMATC
