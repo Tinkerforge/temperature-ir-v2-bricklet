@@ -3,7 +3,7 @@
   (general
     (links 45)
     (no_connects 0)
-    (area 113.189499 94.569499 133.570501 119.950501)
+    (area 112.524999 93.904999 283.97585 165.750793)
     (thickness 1.6002)
     (drawings 12)
     (tracks 151)
@@ -43,7 +43,7 @@
   )
 
   (setup
-    (last_trace_width 0.2)
+    (last_trace_width 0.24892)
     (user_trace_width 0.2)
     (user_trace_width 0.25)
     (user_trace_width 0.3)
@@ -6572,7 +6572,7 @@
     )
   )
 
-  (gr_text Status (at 124.18 112.26) (layer F.SilkS)
+  (gr_text status (at 124.18 112.26) (layer F.SilkS)
     (effects (font (size 0.8001 0.8001) (thickness 0.14986)))
   )
   (gr_line (start 115.88 94.76) (end 130.88 94.76) (angle 90) (layer Edge.Cuts) (width 0.381))
