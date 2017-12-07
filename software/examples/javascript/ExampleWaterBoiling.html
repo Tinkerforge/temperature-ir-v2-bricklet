@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+        <title>Tinkerforge | JavaScript Example</title>
+    </head>
+    <body>
+        <div style="text-align:center;">
+            <h1>Temperature IR Bricklet 2.0 Water Boiling Example</h1>
+            <p>
+                <input value="localhost" id="host" type="text" size="20">:
+                <input value="4280" id="port" type="text" size="5">,
+                <input value="uid" id="uid" type="text" size="5">
+                <input value="Start Example" id="start" type="button" onclick="startExample();">
+            </p>
+            <p>
+                <textarea readonly id="text" cols="80" rows="24" style="resize:none;"
+                          >Press "Start Example" to begin ...</textarea>
+            </p>
+        <div>
+        <script src="./Tinkerforge.js" type='text/javascript'></script>
+        <script type='text/javascript'>
+            var ipcon;
+            var textArea = document.getElementById("text");
+            function startExample() {
+                textArea.value = "";
+                var HOST = document.getElementById("host").value;
+                var PORT = parseInt(document.getElementById("port").value);
+                var UID = document.getElementById("uid").value;
+                if(ipcon !== undefined) {
+                    ipcon.disconnect();
+                }
+                ipcon = new Tinkerforge.IPConnection(); // Create IP connection
+                var tir = new Tinkerforge.BrickletTemperatureIRV2(UID, ipcon); // Create device object
+                ipcon.connect(HOST, PORT,
+                    function(error) {
+                        textArea.value += 'Error: ' + error + '\n';
+                    }
+                ); // Connect to brickd
+                // Don't use device before ipcon is connected
+
+                ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
+                    function (connectReason) {
+                        // Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)
+                        tir.setEmissivity(64224);
+
+                        // Configure threshold for object temperature "greater than 100 °C" (unit is °C/10)
+                        // with a debounce period of 10s (10000ms)
+                        tir.setObjectTemperatureCallbackConfiguration(10000, false, '>', 100*10, 0);
+                    }
+                );
+
+                // Register object temperature reached callback
+                tir.on(Tinkerforge.BrickletTemperatureIRV2.CALLBACK_OBJECT_TEMPERATURE,
+                    // Callback function for object temperature reached callback (parameter has unit °C/10)
+                    function (temperature) {
+                        textArea.value += 'Object Temperature: ' + temperature/10.0 + ' °C\n';
+                        textArea.value += 'The water is boiling!\n';
+                        textArea.scrollTop = textArea.scrollHeight;
+                    }
+                );
+            }
+        </script>
+    </body>
+</html>
