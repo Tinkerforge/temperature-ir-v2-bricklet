@@ -1,9 +1,9 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.7-e2-6376~58~ubuntu17.04.1)
+(kicad_pcb (version 4) (host pcbnew 4.0.2+dfsg1-stable)
 
   (general
     (links 45)
     (no_connects 0)
-    (area 112.524999 93.904999 283.97585 165.750793)
+    (area 113.189499 94.569499 133.570501 119.950501)
     (thickness 1.6002)
     (drawings 12)
     (tracks 151)
@@ -173,7 +173,7 @@
       (net 3 SDA))
     (pad 1 thru_hole circle (at -2.54 0 180) (size 1.6002 1.6002) (drill 0.50038) (layers *.Cu *.Mask F.SilkS)
       (net 2 SCL))
-    (model unsorted/MLX90614-TemperatureIR.wrl
+    (model Sensors_Detectors/MLX90614-TemperatureIR.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 225))
