@@ -10,7 +10,7 @@ ipcon=NETNew["Tinkerforge.IPConnection"]
 tir=NETNew["Tinkerforge.BrickletTemperatureIRV2",uid,ipcon]
 ipcon@Connect[host,port]
 
-(*Callback function for object temperature callback (parameter has unit °C/10)*)
+(*Callback function for object temperature callback*)
 ObjectTemperatureCB[sender_,temperature_]:=
  Print["Object Temperature: "<>ToString[N[Quantity[temperature,"°C/10"]]]]
 AddEventHandler[tir@ObjectTemperatureCallback,ObjectTemperatureCB]

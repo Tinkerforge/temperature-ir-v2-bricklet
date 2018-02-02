@@ -11,11 +11,11 @@ function octave_example_simple()
     ipcon.connect(HOST, PORT); % Connect to brickd
     % Don't use device before ipcon is connected
 
-    % Get current ambient temperature (unit is °C/10)
+    % Get current ambient temperature
     ambientTemperature = tir.getAmbientTemperature();
     fprintf("Ambient Temperature: %g °C\n", ambientTemperature/10.0);
 
-    % Get current object temperature (unit is °C/10)
+    % Get current object temperature
     objectTemperature = tir.getObjectTemperature();
     fprintf("Object Temperature: %g °C\n", objectTemperature/10.0);
 

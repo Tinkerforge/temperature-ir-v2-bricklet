@@ -7,7 +7,7 @@ use constant HOST => 'localhost';
 use constant PORT => 4223;
 use constant UID => 'XYZ'; # Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
-# Callback subroutine for object temperature callback (parameter has unit °C/10)
+# Callback subroutine for object temperature callback
 sub cb_object_temperature
 {
     my ($temperature) = @_;

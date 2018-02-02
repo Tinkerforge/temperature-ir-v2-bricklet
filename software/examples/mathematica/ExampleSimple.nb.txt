@@ -10,10 +10,10 @@ ipcon=NETNew["Tinkerforge.IPConnection"]
 tir=NETNew["Tinkerforge.BrickletTemperatureIRV2",uid,ipcon]
 ipcon@Connect[host,port]
 
-(*Get current ambient temperature (unit is °C/10)*)
+(*Get current ambient temperature*)
 Print["Ambient Temperature: "<>ToString[N[Quantity[tir@GetAmbientTemperature[],"°C/10"]]]]
 
-(*Get current object temperature (unit is °C/10)*)
+(*Get current object temperature*)
 Print["Object Temperature: "<>ToString[N[Quantity[tir@GetObjectTemperature[],"°C/10"]]]]
 
 (*Clean up*)

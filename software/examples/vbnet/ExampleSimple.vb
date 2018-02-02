@@ -13,11 +13,11 @@ Module ExampleSimple
         ipcon.Connect(HOST, PORT) ' Connect to brickd
         ' Don't use device before ipcon is connected
 
-        ' Get current ambient temperature (unit is °C/10)
+        ' Get current ambient temperature
         Dim ambientTemperature As Short = tir.GetAmbientTemperature()
         Console.WriteLine("Ambient Temperature: " + (ambientTemperature/10.0).ToString() + " °C")
 
-        ' Get current object temperature (unit is °C/10)
+        ' Get current object temperature
         Dim objectTemperature As Short = tir.GetObjectTemperature()
         Console.WriteLine("Object Temperature: " + (objectTemperature/10.0).ToString() + " °C")
 

@@ -6,7 +6,7 @@ Module ExampleCallback
     Const PORT As Integer = 4223
     Const UID As String = "XYZ" ' Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
-    ' Callback subroutine for object temperature callback (parameter has unit °C/10)
+    ' Callback subroutine for object temperature callback
     Sub ObjectTemperatureCB(ByVal sender As BrickletTemperatureIRV2, _
                             ByVal temperature As Short)
         Console.WriteLine("Object Temperature: " + (temperature/10.0).ToString() + " °C")

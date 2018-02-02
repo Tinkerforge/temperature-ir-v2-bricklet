@@ -3,8 +3,8 @@
 
 uid=XYZ # Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
-# Get current ambient temperature (unit is °C/10)
+# Get current ambient temperature
 tinkerforge call temperature-ir-v2-bricklet $uid get-ambient-temperature
 
-# Get current object temperature (unit is °C/10)
+# Get current object temperature
 tinkerforge call temperature-ir-v2-bricklet $uid get-object-temperature

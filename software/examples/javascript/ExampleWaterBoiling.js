@@ -19,7 +19,7 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
         // Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)
         tir.setEmissivity(64224);
 
-        // Configure threshold for object temperature "greater than 100 °C" (unit is °C/10)
+        // Configure threshold for object temperature "greater than 100 °C"
         // with a debounce period of 10s (10000ms)
         tir.setObjectTemperatureCallbackConfiguration(10000, false, '>', 100*10, 0);
     }
@@ -27,7 +27,7 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
 
 // Register object temperature reached callback
 tir.on(Tinkerforge.BrickletTemperatureIRV2.CALLBACK_OBJECT_TEMPERATURE,
-    // Callback function for object temperature reached callback (parameter has unit °C/10)
+    // Callback function for object temperature reached callback
     function (temperature) {
         console.log('Object Temperature: ' + temperature/10.0 + ' °C');
         console.log('The water is boiling!');

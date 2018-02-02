@@ -19,13 +19,13 @@ ipcon.connect HOST, PORT # Connect to brickd
 # Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)
 tir.set_emissivity 64224
 
-# Register object temperature reached callback (parameter has unit °C/10)
+# Register object temperature reached callback
 tir.register_callback(BrickletTemperatureIRV2::CALLBACK_OBJECT_TEMPERATURE) do |temperature|
   puts "Object Temperature: #{temperature/10.0} °C"
   puts 'The water is boiling!'
 end
 
-# Configure threshold for object temperature "greater than 100 °C" (unit is °C/10)
+# Configure threshold for object temperature "greater than 100 °C"
 # with a debounce period of 10s (10000ms)
 tir.set_object_temperature_callback_configuration 10000, false, '>', 100*10, 0
 

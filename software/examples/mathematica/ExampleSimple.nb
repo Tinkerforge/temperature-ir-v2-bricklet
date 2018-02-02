@@ -18,11 +18,11 @@ Notebook[{
    RowBox[{"ipcon", "@", RowBox[{"Connect", "[", RowBox[{"host", ",", "port"}], "]"}]}],
    RowBox[{"
 "}],
-   RowBox[{"(*", "Get current ambient temperature (unit is \.b0C/10)", "*)"}],
+   RowBox[{"(*", "Get current ambient temperature", "*)"}],
    RowBox[{"Print", "[", RowBox[{"\"\<Ambient Temperature: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{RowBox[{"tir", "@", RowBox[{"GetAmbientTemperature", "[", "]"}]}], ",", "\"\<\.b0C/10\>\""}], "]"}], "]"}], "]"}]}], "]"}],
    RowBox[{"
 "}],
-   RowBox[{"(*", "Get current object temperature (unit is \.b0C/10)", "*)"}],
+   RowBox[{"(*", "Get current object temperature", "*)"}],
    RowBox[{"Print", "[", RowBox[{"\"\<Object Temperature: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{RowBox[{"tir", "@", RowBox[{"GetObjectTemperature", "[", "]"}]}], ",", "\"\<\.b0C/10\>\""}], "]"}], "]"}], "]"}]}], "]"}],
    RowBox[{"
 "}],

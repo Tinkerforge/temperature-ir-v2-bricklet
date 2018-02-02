@@ -7,7 +7,7 @@
 #define PORT 4223
 #define UID "XYZ" // Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
-// Callback function for object temperature reached callback (parameter has unit °C/10)
+// Callback function for object temperature reached callback
 void cb_object_temperature(int16_t temperature, void *user_data) {
 	(void)user_data; // avoid unused parameter warning
 
@@ -40,7 +40,7 @@ int main(void) {
 	                                    (void *)cb_object_temperature,
 	                                    NULL);
 
-	// Configure threshold for object temperature "greater than 100 °C" (unit is °C/10)
+	// Configure threshold for object temperature "greater than 100 °C"
 	// with a debounce period of 10s (10000ms)
 	temperature_ir_v2_set_object_temperature_callback_configuration(&tir, 10000, false, '>', 100*10, 0);
 

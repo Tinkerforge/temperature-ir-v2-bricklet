@@ -23,7 +23,7 @@ int main(void) {
 	}
 	// Don't use device before ipcon is connected
 
-	// Get current ambient temperature (unit is °C/10)
+	// Get current ambient temperature
 	int16_t ambient_temperature;
 	if(temperature_ir_v2_get_ambient_temperature(&tir, &ambient_temperature) < 0) {
 		fprintf(stderr, "Could not get ambient temperature, probably timeout\n");
@@ -32,7 +32,7 @@ int main(void) {
 
 	printf("Ambient Temperature: %f °C\n", ambient_temperature/10.0);
 
-	// Get current object temperature (unit is °C/10)
+	// Get current object temperature
 	int16_t object_temperature;
 	if(temperature_ir_v2_get_object_temperature(&tir, &object_temperature) < 0) {
 		fprintf(stderr, "Could not get object temperature, probably timeout\n");

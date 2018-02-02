@@ -13,7 +13,7 @@ ipcon@Connect[host,port]
 (*Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)*)
 tir@SetEmissivity[64224]
 
-(*Callback function for object temperature reached callback (parameter has unit °C/10)*)
+(*Callback function for object temperature reached callback*)
 ObjectTemperatureCB[sender_,temperature_]:=
  Module[{},
   Print["Object Temperature: "<>ToString[N[Quantity[temperature,"°C/10"]]]];
@@ -22,7 +22,7 @@ ObjectTemperatureCB[sender_,temperature_]:=
 
 AddEventHandler[tir@ObjectTemperatureCallback,ObjectTemperatureCB]
 
-(*Configure threshold for object temperature "greater than 100 °C" (unit is °C/10)*)
+(*Configure threshold for object temperature "greater than 100 °C"*)
 (*with a debounce period of 10s (10000ms)*)
 option=Tinkerforge`BrickletTemperatureIRV2`THRESHOLDUOPTIONUGREATER
 tir@SetObjectTemperatureCallbackConfiguration[10000,False,option,100*10,0]

@@ -13,11 +13,11 @@ my $tir = Tinkerforge::BrickletTemperatureIRV2->new(&UID, $ipcon); # Create devi
 $ipcon->connect(&HOST, &PORT); # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Get current ambient temperature (unit is °C/10)
+# Get current ambient temperature
 my $ambient_temperature = $tir->get_ambient_temperature();
 print "Ambient Temperature: " . $ambient_temperature/10.0 . " °C\n";
 
-# Get current object temperature (unit is °C/10)
+# Get current object temperature
 my $object_temperature = $tir->get_object_temperature();
 print "Object Temperature: " . $object_temperature/10.0 . " °C\n";
 

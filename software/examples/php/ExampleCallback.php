@@ -10,7 +10,7 @@ const HOST = 'localhost';
 const PORT = 4223;
 const UID = 'XYZ'; // Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
-// Callback function for object temperature callback (parameter has unit °C/10)
+// Callback function for object temperature callback
 function cb_objectTemperature($temperature)
 {
     echo "Object Temperature: " . $temperature/10.0 . " °C\n";

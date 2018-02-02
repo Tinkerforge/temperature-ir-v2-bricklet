@@ -21,7 +21,7 @@ function octave_example_callback()
     ipcon.disconnect();
 end
 
-% Callback function for object temperature callback (parameter has unit °C/10)
+% Callback function for object temperature callback
 function cb_object_temperature(e)
     fprintf("Object Temperature: %g °C\n", e.temperature/10.0);
 end

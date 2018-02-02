@@ -8,7 +8,7 @@ UID = "XYZ" # Change XYZ to the UID of your Temperature IR Bricklet 2.0
 from tinkerforge.ip_connection import IPConnection
 from tinkerforge.bricklet_temperature_ir_v2 import BrickletTemperatureIRV2
 
-# Callback function for object temperature reached callback (parameter has unit °C/10)
+# Callback function for object temperature reached callback
 def cb_object_temperature(temperature):
     print("Object Temperature: " + str(temperature/10.0) + " °C")
     print("The water is boiling!")
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     # Register object temperature reached callback to function cb_object_temperature
     tir.register_callback(tir.CALLBACK_OBJECT_TEMPERATURE, cb_object_temperature)
 
-    # Configure threshold for object temperature "greater than 100 °C" (unit is °C/10)
+    # Configure threshold for object temperature "greater than 100 °C"
     # with a debounce period of 10s (10000ms)
     tir.set_object_temperature_callback_configuration(10000, False, ">", 100*10, 0)
 

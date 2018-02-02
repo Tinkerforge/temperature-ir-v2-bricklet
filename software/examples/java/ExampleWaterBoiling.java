@@ -21,7 +21,7 @@ public class ExampleWaterBoiling {
 		// Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)
 		tir.setEmissivity(64224);
 
-		// Add object temperature reached listener (parameter has unit °C/10)
+		// Add object temperature reached listener
 		tir.addObjectTemperatureListener(new BrickletTemperatureIRV2.ObjectTemperatureListener() {
 			public void objectTemperature(int temperature) {
 				System.out.println("Object Temperature: " + temperature/10.0 + " °C");
@@ -29,7 +29,7 @@ public class ExampleWaterBoiling {
 			}
 		});
 
-		// Configure threshold for object temperature "greater than 100 °C" (unit is °C/10)
+		// Configure threshold for object temperature "greater than 100 °C"
 		// with a debounce period of 10s (10000ms)
 		tir.setObjectTemperatureCallbackConfiguration(10000, false, '>', 100*10, 0);
 

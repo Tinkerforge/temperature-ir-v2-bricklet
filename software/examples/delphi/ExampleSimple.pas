@@ -36,11 +36,11 @@ begin
   ipcon.Connect(HOST, PORT);
   { Don't use device before ipcon is connected }
 
-  { Get current ambient temperature (unit is °C/10) }
+  { Get current ambient temperature }
   ambientTemperature := tir.GetAmbientTemperature;
   WriteLn(Format('Ambient Temperature: %f °C', [ambientTemperature/10.0]));
 
-  { Get current object temperature (unit is °C/10) }
+  { Get current object temperature }
   objectTemperature := tir.GetObjectTemperature;
   WriteLn(Format('Object Temperature: %f °C', [objectTemperature/10.0]));
 

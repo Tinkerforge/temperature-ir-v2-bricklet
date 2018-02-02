@@ -7,7 +7,7 @@
 #define PORT 4223
 #define UID "XYZ" // Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
-// Callback function for object temperature callback (parameter has unit °C/10)
+// Callback function for object temperature callback
 void cb_object_temperature(int16_t temperature, void *user_data) {
 	(void)user_data; // avoid unused parameter warning
 

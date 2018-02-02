@@ -16,7 +16,7 @@ tir = BrickletTemperatureIRV2.new UID, ipcon # Create device object
 ipcon.connect HOST, PORT # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Register object temperature callback (parameter has unit °C/10)
+# Register object temperature callback
 tir.register_callback(BrickletTemperatureIRV2::CALLBACK_OBJECT_TEMPERATURE) do |temperature|
   puts "Object Temperature: #{temperature/10.0} °C"
 end

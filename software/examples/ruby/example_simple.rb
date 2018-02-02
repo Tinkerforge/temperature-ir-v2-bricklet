@@ -16,11 +16,11 @@ tir = BrickletTemperatureIRV2.new UID, ipcon # Create device object
 ipcon.connect HOST, PORT # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Get current ambient temperature (unit is °C/10)
+# Get current ambient temperature
 ambient_temperature = tir.get_ambient_temperature
 puts "Ambient Temperature: #{ambient_temperature/10.0} °C"
 
-# Get current object temperature (unit is °C/10)
+# Get current object temperature
 object_temperature = tir.get_object_temperature
 puts "Object Temperature: #{object_temperature/10.0} °C"
 

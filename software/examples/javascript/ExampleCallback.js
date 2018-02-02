@@ -23,7 +23,7 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
 
 // Register object temperature callback
 tir.on(Tinkerforge.BrickletTemperatureIRV2.CALLBACK_OBJECT_TEMPERATURE,
-    // Callback function for object temperature callback (parameter has unit °C/10)
+    // Callback function for object temperature callback
     function (temperature) {
         console.log('Object Temperature: ' + temperature/10.0 + ' °C');
     }

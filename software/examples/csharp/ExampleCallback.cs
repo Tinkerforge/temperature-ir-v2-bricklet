@@ -7,7 +7,7 @@ class Example
 	private static int PORT = 4223;
 	private static string UID = "XYZ"; // Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
-	// Callback function for object temperature callback (parameter has unit °C/10)
+	// Callback function for object temperature callback
 	static void ObjectTemperatureCB(BrickletTemperatureIRV2 sender, short temperature)
 	{
 		Console.WriteLine("Object Temperature: " + temperature/10.0 + " °C");

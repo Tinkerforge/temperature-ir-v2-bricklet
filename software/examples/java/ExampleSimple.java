@@ -18,11 +18,11 @@ public class ExampleSimple {
 		ipcon.connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Get current ambient temperature (unit is °C/10)
+		// Get current ambient temperature
 		int ambientTemperature = tir.getAmbientTemperature(); // Can throw com.tinkerforge.TimeoutException
 		System.out.println("Ambient Temperature: " + ambientTemperature/10.0 + " °C");
 
-		// Get current object temperature (unit is °C/10)
+		// Get current object temperature
 		int objectTemperature = tir.getObjectTemperature(); // Can throw com.tinkerforge.TimeoutException
 		System.out.println("Object Temperature: " + objectTemperature/10.0 + " °C");
 

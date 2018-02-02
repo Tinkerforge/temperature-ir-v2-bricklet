@@ -16,11 +16,11 @@ class Example
 		ipcon.Connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Get current ambient temperature (unit is °C/10)
+		// Get current ambient temperature
 		short ambientTemperature = tir.GetAmbientTemperature();
 		Console.WriteLine("Ambient Temperature: " + ambientTemperature/10.0 + " °C");
 
-		// Get current object temperature (unit is °C/10)
+		// Get current object temperature
 		short objectTemperature = tir.GetObjectTemperature();
 		Console.WriteLine("Object Temperature: " + objectTemperature/10.0 + " °C");
 

@@ -16,7 +16,7 @@ ipcon.connect(HOST, PORT,
 
 ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
     function (connectReason) {
-        // Get current ambient temperature (unit is °C/10)
+        // Get current ambient temperature
         tir.getAmbientTemperature(
             function (ambientTemperature) {
                 console.log('Ambient Temperature: ' + ambientTemperature/10.0 + ' °C');
@@ -26,7 +26,7 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
             }
         );
 
-        // Get current object temperature (unit is °C/10)
+        // Get current object temperature
         tir.getObjectTemperature(
             function (objectTemperature) {
                 console.log('Object Temperature: ' + objectTemperature/10.0 + ' °C');
