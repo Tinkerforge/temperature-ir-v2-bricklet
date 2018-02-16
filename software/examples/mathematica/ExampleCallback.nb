@@ -1,0 +1,40 @@
+Notebook[{
+ Cell[
+  BoxData[{
+   RowBox[{"Needs", "[", "\"\<NETLink`\>\"", "]"}],
+   RowBox[{"LoadNETAssembly", "[", RowBox[{"\"\<Tinkerforge\>\"", ",", RowBox[{RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<../../..\>\""}]}], "]"}]
+  }], "Input"
+ ],
+ Cell[
+  BoxData[{
+   RowBox[{"host", "=", "\"\<localhost\>\""}],
+   RowBox[{"port", "=", "4223"}],
+   RowBox[{"uid", "=", "\"\<XYZ\>\"", RowBox[{"(*", "Change XYZ to the UID of your Temperature IR Bricklet 2.0", "*)"}]}],
+   RowBox[{"
+"}],
+   RowBox[{"(*", "Create IPConnection and device object", "*)"}],
+   RowBox[{"ipcon", "=", RowBox[{"NETNew", "[", "\"\<Tinkerforge.IPConnection\>\"", "]"}]}],
+   RowBox[{"tir", "=", RowBox[{"NETNew", "[", RowBox[{"\"\<Tinkerforge.BrickletTemperatureIRV2\>\"", ",", "uid", ",", "ipcon"}], "]"}]}],
+   RowBox[{"ipcon", "@", RowBox[{"Connect", "[", RowBox[{"host", ",", "port"}], "]"}]}],
+   RowBox[{"
+"}],
+   RowBox[{"(*", "Callback function for object temperature callback", "*)"}],
+   RowBox[{RowBox[{"ObjectTemperatureCB", "[", RowBox[{"sender_", ",", "temperature_"}], "]"}], ":=", "\[IndentingNewLine]", RowBox[{"Print", "[", RowBox[{"\"\<Object Temperature: \>\"", "<>", RowBox[{"ToString", "[", RowBox[{"N", "[", RowBox[{"Quantity", "[", RowBox[{"temperature", ",", "\"\<\.b0C/10\>\""}], "]"}], "]"}], "]"}]}], "]"}]}],
+   RowBox[{"AddEventHandler", "[", RowBox[{RowBox[{"tir", "@", "ObjectTemperatureCallback"}], ",", "ObjectTemperatureCB"}], "]"}],
+   RowBox[{"
+"}],
+   RowBox[{"(*", "Set period for object temperature callback to 1s (1000ms) without a threshold", "*)"}],
+   RowBox[{"option", "=", "Tinkerforge`BrickletTemperatureIRV2`THRESHOLDUOPTIONUOFF"}],
+   RowBox[{"tir", "@", RowBox[{"SetObjectTemperatureCallbackConfiguration", "[", RowBox[{"1000", ",", "False", ",", "option", ",", "0", ",", "0"}], "]"}]}],
+   RowBox[{"
+"}],
+   RowBox[{"Input", "[", "\"\<Click OK to exit\>\"", "]"}],
+   RowBox[{"
+"}],
+   RowBox[{"(*", "Clean up", "*)"}],
+   RowBox[{"ipcon", "@", RowBox[{"Disconnect", "[", "]"}]}],
+   RowBox[{"ReleaseNETObject", "[", "tir", "]"}],
+   RowBox[{"ReleaseNETObject", "[", "ipcon", "]"}]
+  }], "Input"
+ ]
+}]

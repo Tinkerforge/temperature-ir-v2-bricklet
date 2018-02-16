@@ -1,0 +1,22 @@
+Needs["NETLink`"]
+LoadNETAssembly["Tinkerforge",NotebookDirectory[]<>"../../.."]
+
+host="localhost"
+port=4223
+uid="XYZ"(*Change XYZ to the UID of your Temperature IR Bricklet 2.0*)
+
+(*Create IPConnection and device object*)
+ipcon=NETNew["Tinkerforge.IPConnection"]
+tir=NETNew["Tinkerforge.BrickletTemperatureIRV2",uid,ipcon]
+ipcon@Connect[host,port]
+
+(*Get current ambient temperature*)
+Print["Ambient Temperature: "<>ToString[N[Quantity[tir@GetAmbientTemperature[],"°C/10"]]]]
+
+(*Get current object temperature*)
+Print["Object Temperature: "<>ToString[N[Quantity[tir@GetObjectTemperature[],"°C/10"]]]]
+
+(*Clean up*)
+ipcon@Disconnect[]
+ReleaseNETObject[tir]
+ReleaseNETObject[ipcon]
