@@ -1,11 +1,11 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.2+dfsg1-stable)
+(kicad_pcb (version 4) (host pcbnew 4.0.7-e2-6376~58~ubuntu17.04.1)
 
   (general
     (links 45)
     (no_connects 0)
-    (area 113.189499 94.569499 133.570501 119.950501)
+    (area 112.524999 93.904999 283.97585 165.750793)
     (thickness 1.6002)
-    (drawings 12)
+    (drawings 13)
     (tracks 151)
     (zones 0)
     (modules 24)
@@ -6572,6 +6572,7 @@
     )
   )
 
+  (gr_circle (center 118.88 107.26) (end 123.08 107.26) (layer Dwgs.User) (width 0.381))
   (gr_text status (at 124.18 112.26) (layer F.SilkS)
     (effects (font (size 0.8001 0.8001) (thickness 0.14986)))
   )
