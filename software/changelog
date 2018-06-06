@@ -1,2 +1,5 @@
-2.0.0:
+2018-02-19: 2.0.0 (ae04519)
 - Initial version
+
+<unknown>: 2.0.1 (<unknown>)
+- Fix wrong length for get-object/ambient-temperature packets (through bricklib2)
