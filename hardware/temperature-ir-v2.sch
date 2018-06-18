@@ -29,7 +29,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:temperature-ir-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -185,7 +184,7 @@ U 1 1 4C653F82
 P 1850 2600
 F 0 "C2" H 1900 2700 50  0000 L CNN
 F 1 "220pF" H 1900 2500 50  0000 L CNN
-F 2 "kicad-libraries:C0402E" H 1850 2600 60  0001 C CNN
+F 2 "kicad-libraries:C0402F" H 1850 2600 60  0001 C CNN
 F 3 "" H 1850 2600 60  0001 C CNN
 	1    1850 2600
 	1    0    0    -1  
@@ -453,7 +452,7 @@ U 1 1 59BA87AC
 P 3800 5700
 F 0 "D1" H 3800 5800 50  0000 C CNN
 F 1 "blue" H 3800 5600 50  0000 C CNN
-F 2 "kicad-libraries:D0603E" H 3800 5700 50  0001 C CNN
+F 2 "kicad-libraries:D0603F" H 3800 5700 50  0001 C CNN
 F 3 "" H 3800 5700 50  0000 C CNN
 	1    3800 5700
 	1    0    0    -1  
