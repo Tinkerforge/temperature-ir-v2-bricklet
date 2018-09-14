@@ -22,7 +22,7 @@ Module ExampleCallback
         ' Register object temperature callback to subroutine ObjectTemperatureCB
         AddHandler tir.ObjectTemperatureCallback, AddressOf ObjectTemperatureCB
 
-        ' Set period for object_temperature callback to 1s (1000ms) without a threshold
+        ' Set period for object temperature callback to 1s (1000ms) without a threshold
         tir.SetObjectTemperatureCallbackConfiguration(1000, False, "x"C, 0, 0)
 
         Console.WriteLine("Press key to exit")
