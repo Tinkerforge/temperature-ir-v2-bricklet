@@ -3,3 +3,6 @@
 
 2018-06-07: 2.0.1 (c282e83)
 - Fix wrong length for get-object/ambient-temperature packets (through bricklib2)
+
+2018-10-04: 2.0.2 (TBD)
+- Fix race condition with potential buffer overflow (through bricklib2)
