@@ -12,10 +12,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     ipcon.connect((HOST, PORT)).recv()??; // Connect to brickd.
                                           // Don't use device before ipcon is connected.
 
-    // Create receiver for object temperature events.
-    let object_temperature_receiver = tir.get_object_temperature_receiver();
+    let object_temperature_receiver = tir.get_object_temperature_callback_receiver();
 
-    // Spawn thread to handle received events. This thread ends when the `tir` object
+    // Spawn thread to handle received callback messages.
+    // This thread ends when the `tir` object
     // is dropped, so there is no need for manual cleanup.
     thread::spawn(move || {
         for object_temperature in object_temperature_receiver {
