@@ -1,29 +1,30 @@
 use std::{error::Error, io, thread};
-use tinkerforge::{ipconnection::IpConnection, temperature_ir_v2_bricklet::*};
+use tinkerforge::{ip_connection::IpConnection, temperature_ir_v2_bricklet::*};
 
-const HOST: &str = "127.0.0.1";
+const HOST: &str = "localhost";
 const PORT: u16 = 4223;
-const UID: &str = "XYZ"; // Change XYZ to the UID of your Temperature IR Bricklet 2.0
+const UID: &str = "XYZ"; // Change XYZ to the UID of your Temperature IR Bricklet 2.0.
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let ipcon = IpConnection::new(); // Create IP connection
-    let temperature_ir_v2_bricklet = TemperatureIRV2Bricklet::new(UID, &ipcon); // Create device object
+    let ipcon = IpConnection::new(); // Create IP connection.
+    let tir = TemperatureIrV2Bricklet::new(UID, &ipcon); // Create device object.
 
-    ipcon.connect(HOST, PORT).recv()??; // Connect to brickd
-                                        // Don't use device before ipcon is connected
+    ipcon.connect((HOST, PORT)).recv()??; // Connect to brickd.
+                                          // Don't use device before ipcon is connected.
 
-    //Create listener for object temperature events.
-    let object_temperature_listener = temperature_ir_v2_bricklet.get_object_temperature_receiver();
-    // Spawn thread to handle received events. This thread ends when the temperature_ir_v2_bricklet
+    // Create receiver for object temperature events.
+    let object_temperature_receiver = tir.get_object_temperature_receiver();
+
+    // Spawn thread to handle received events. This thread ends when the `tir` object
     // is dropped, so there is no need for manual cleanup.
     thread::spawn(move || {
-        for event in object_temperature_listener {
-            println!("Object Temperature: {}{}", event as f32 / 10.0, " °C");
+        for object_temperature in object_temperature_receiver {
+            println!("Object Temperature: {} °C", object_temperature as f32 / 10.0);
         }
     });
 
-    // Set period for object temperature callback to 1s (1000ms) without a threshold
-    temperature_ir_v2_bricklet.set_object_temperature_callback_configuration(1000, false, 'x', 0, 0);
+    // Set period for object temperature callback to 1s (1000ms) without a threshold.
+    tir.set_object_temperature_callback_configuration(1000, false, 'x', 0, 0);
 
     println!("Press enter to exit.");
     let mut _input = String::new();
