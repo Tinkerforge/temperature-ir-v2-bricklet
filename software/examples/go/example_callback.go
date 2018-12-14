@@ -19,7 +19,7 @@ func main() {
 	// Don't use device before ipcon is connected.
 
 	tir.RegisterObjectTemperatureCallback(func(temperature int16) {
-		fmt.Printf("Object Temperature: %d °C\n", float64(temperature)/10.0)
+		fmt.Printf("Object Temperature: %f °C\n", float64(temperature)/10.0)
 	})
 
 	// Set period for object temperature callback to 1s (1000ms) without a threshold.
