@@ -22,7 +22,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     // is dropped, so there is no need for manual cleanup.
     thread::spawn(move || {
         for object_temperature in object_temperature_receiver {
-            println!("Object Temperature: {} °C", object_temperature as f32 / 10.0);
+            println!(
+                "Object Temperature: {} °C",
+                object_temperature as f32 / 10.0
+            );
             println!("The water is boiling!");
         }
     });
