@@ -15,17 +15,11 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // Get current ambient temperature.
     let ambient_temperature = tir.get_ambient_temperature().recv()?;
-    println!(
-        "Ambient Temperature: {} °C",
-        ambient_temperature as f32 / 10.0
-    );
+    println!("Ambient Temperature: {} °C", ambient_temperature as f32 / 10.0);
 
     // Get current object temperature.
     let object_temperature = tir.get_object_temperature().recv()?;
-    println!(
-        "Object Temperature: {} °C",
-        object_temperature as f32 / 10.0
-    );
+    println!("Object Temperature: {} °C", object_temperature as f32 / 10.0);
 
     println!("Press enter to exit.");
     let mut _input = String::new();
