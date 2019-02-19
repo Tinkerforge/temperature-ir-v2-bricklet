@@ -47,8 +47,12 @@ BootloaderHandleMessageResponse handle_message(const void *message, void *respon
 }
 
 BootloaderHandleMessageResponse set_emissivity(const SetEmissivity *data) {
-	mlx90614.emissivity     = data->emissivity;
-	mlx90614.emissivity_set = true;
+	mlx90614.emissivity = data->emissivity;
+	if(mlx90614.emissivity < (0xFFFF/10 + 1)) {
+		mlx90614.emissivity = 0xFFFF/10 + 1;
+	}
+
+	mlx90614.emissivity_new = true;
 
 	return HANDLE_MESSAGE_RESPONSE_EMPTY;
 }
