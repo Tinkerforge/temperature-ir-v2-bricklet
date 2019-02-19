@@ -26,34 +26,19 @@
 
 #include "bricklib2/hal/i2c_fifo/i2c_fifo.h"
 
-// Emissivity has to be erased before it is written
-typedef enum {
-	MLX90614_SET_EMISSIVITY_STATE_NONE,
-	MLX90614_SET_EMISSIVITY_STATE_ERASE,
-	MLX90614_SET_EMISSIVITY_STATE_WRITE,
-} MLX90614SetEmissivityState;
-
-typedef enum {
-	MLX90614_GET_STATE_NONE,
-	MLX90614_GET_STATE_EMISSIVITY,
-	MLX90614_GET_STATE_AMBIENT,
-	MLX90614_GET_STATE_OBJECT,
-} MLX90614GetState;
 
 typedef struct {
-	MLX90614SetEmissivityState emissivity_set;
-	bool emissivity_get;
-	uint16_t emissivity;
-
-	MLX90614GetState get_state;
-
 	I2CFifo i2c_fifo;
+
 	uint16_t temperature_ambient;
 	uint16_t temperature_object;
 
-	bool read_ambient;
+	uint16_t emissivity;
+	bool emissivity_new;
 
-	uint32_t sleep_time;
+	uint32_t error_count;
+
+	bool first;
 } MLX90614;
 
 void mlx90614_init(void);

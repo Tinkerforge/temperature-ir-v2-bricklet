@@ -33,7 +33,9 @@
 
 #define FIRMWARE_VERSION_MAJOR 2
 #define FIRMWARE_VERSION_MINOR 0
-#define FIRMWARE_VERSION_REVISION 2
+#define FIRMWARE_VERSION_REVISION 3
+
+#define I2C_FIFO_COOP_ENABLE
 
 #include "config_custom_bootloader.h"
 
