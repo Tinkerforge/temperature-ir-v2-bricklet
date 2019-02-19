@@ -7,6 +7,6 @@
 2018-10-04: 2.0.2 (05956a3)
 - Fix race condition with potential buffer overflow (through bricklib2)
 
-2019-02-19: 2.0.3 (TBD)
+2019-02-19: 2.0.3 (5425f84)
 - Use correct wait times during emissivity change
 - Improved error handling in case of invalid read
