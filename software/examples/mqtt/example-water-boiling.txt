@@ -10,4 +10,4 @@ setup:
 	
 	# Configure threshold for object temperature "greater than 100 °C"
 	# with a debounce period of 10s (10000ms)
-	publish '{"period": 10000, "value_has_to_change": false, "option": "greater", "min": 1000, "max": 0}' to tinkerforge/request/temperature_ir_v2_bricklet/XYZ/set_object_temperature_callback_configuration  
+	publish '{"period": 10000, "value_has_to_change": false, "option": "greater", "min": 1000, "max": 0}' to tinkerforge/request/temperature_ir_v2_bricklet/XYZ/set_object_temperature_callback_configuration
