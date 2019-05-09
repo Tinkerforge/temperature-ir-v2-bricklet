@@ -6637,7 +6637,7 @@
   (gr_text tinkerforge.com (at 123.38 117.96) (layer B.SilkS)
     (effects (font (size 0.8001 0.8001) (thickness 0.14986)) (justify mirror))
   )
-  (gr_text "Temperature\nIR\n2.0" (at 123.28 117.56) (layer F.SilkS)
+  (gr_text "Temperature IR\n2.0" (at 123.38 116.76) (layer F.SilkS) (tstamp 5CD41D26)
     (effects (font (size 0.8001 0.8001) (thickness 0.14986)))
   )
 
