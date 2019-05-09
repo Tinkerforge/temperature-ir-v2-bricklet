@@ -20,8 +20,8 @@
   )
 
   (layers
-    (0 Vorderseite signal)
-    (31 Rückseite signal)
+    (0 Vorderseite signal hide)
+    (31 Rückseite signal hide)
     (32 B.Adhes user)
     (33 F.Adhes user)
     (34 B.Paste user)
@@ -6620,7 +6620,7 @@
   )
 
   (gr_circle (center 118.88 107.26) (end 123.08 107.26) (layer Dwgs.User) (width 0.381))
-  (gr_text status (at 124.18 112.26) (layer F.SilkS)
+  (gr_text Status (at 124.18 112.26) (layer F.SilkS)
     (effects (font (size 0.8001 0.8001) (thickness 0.14986)))
   )
   (gr_line (start 115.88 94.76) (end 130.88 94.76) (angle 90) (layer Edge.Cuts) (width 0.381))
