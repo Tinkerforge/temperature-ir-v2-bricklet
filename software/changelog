@@ -11,5 +11,5 @@
 - Use correct wait times during emissivity change
 - Improved error handling in case of invalid read
 
-2019-05-29: 2.0.4 (TBD)
+2019-05-29: 2.0.4 (bc86172)
 - Fix SPITFP IRQ race condition with other higher prio IRQs (through bricklib2)
