@@ -4,7 +4,7 @@ setup:
 	# Get current ambient temperature
 	subscribe to tinkerforge/response/temperature_ir_v2_bricklet/XYZ/get_ambient_temperature
 	publish '' to tinkerforge/request/temperature_ir_v2_bricklet/XYZ/get_ambient_temperature
-	
+
 	# Get current object temperature
 	subscribe to tinkerforge/response/temperature_ir_v2_bricklet/XYZ/get_object_temperature
 	publish '' to tinkerforge/request/temperature_ir_v2_bricklet/XYZ/get_object_temperature

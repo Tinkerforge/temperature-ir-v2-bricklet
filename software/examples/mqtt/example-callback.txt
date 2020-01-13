@@ -4,6 +4,6 @@ setup:
 	# Handle incoming object temperature callbacks
 	subscribe to tinkerforge/callback/temperature_ir_v2_bricklet/XYZ/object_temperature
 	publish '{"register": true}' to tinkerforge/register/temperature_ir_v2_bricklet/XYZ/object_temperature # Register object_temperature callback
-	
+
 	# Set period for object temperature callback to 1s (1000ms) without a threshold
 	publish '{"period": 1000, "value_has_to_change": false, "option": "off", "min": 0, "max": 0}' to tinkerforge/request/temperature_ir_v2_bricklet/XYZ/set_object_temperature_callback_configuration
