@@ -23,5 +23,5 @@ if __name__ == "__main__":
     object_temperature = tir.get_object_temperature()
     print("Object Temperature: " + str(object_temperature/10.0) + " °C")
 
-    raw_input("Press key to exit\n") # Use input() in Python 3
+    input("Press key to exit\n") # Use raw_input() in Python 2
     ipcon.disconnect()
