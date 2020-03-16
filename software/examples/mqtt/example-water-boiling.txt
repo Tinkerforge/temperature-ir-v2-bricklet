@@ -2,7 +2,7 @@
 
 setup:
 	# Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)
-	publish '{"emissivity": 64224}' to tinkerforge/request/temperature_ir_v2_bricklet/XYZ/set_emissivity 
+	publish '{"emissivity": 64224}' to tinkerforge/request/temperature_ir_v2_bricklet/XYZ/set_emissivity
 
 	# Handle incoming object temperature reached callbacks
 	subscribe to tinkerforge/callback/temperature_ir_v2_bricklet/XYZ/object_temperature
