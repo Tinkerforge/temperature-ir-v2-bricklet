@@ -13,7 +13,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                                           // Don't use device before ipcon is connected.
 
     // Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)
-    tir.set_emissivity(64224);
+    tir.set_emissivity(64224).recv()?;
 
     let object_temperature_receiver = tir.get_object_temperature_callback_receiver();
 
