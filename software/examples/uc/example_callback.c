@@ -1,13 +1,9 @@
-
-
 #include "bindings/hal_common.h"
 #include "bindings/bricklet_temperature_ir_v2.h"
 
 #define UID "XYZ" // Change XYZ to the UID of your Temperature IR Bricklet 2.0
 
 void check(int rc, const char* msg);
-
-
 
 // Callback function for object temperature callback
 void object_temperature_handler(TF_TemperatureIRV2 *device, int16_t temperature,
@@ -16,7 +12,6 @@ void object_temperature_handler(TF_TemperatureIRV2 *device, int16_t temperature,
 
 	tf_hal_printf("Object Temperature: %d 1/%d °C\n", temperature, 10.0);
 }
-
 
 TF_TemperatureIRV2 tir;
 
