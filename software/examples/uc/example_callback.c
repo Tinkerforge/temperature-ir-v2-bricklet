@@ -19,15 +19,13 @@ void example_setup(TF_HalContext *hal) {
 	// Create device object
 	check(tf_temperature_ir_v2_create(&tir, UID, hal), "create device object");
 
-
 	// Register object temperature callback to function object_temperature_handler
 	tf_temperature_ir_v2_register_object_temperature_callback(&tir,
-	                                                         object_temperature_handler,
-	                                                         NULL);
+	                                                          object_temperature_handler,
+	                                                          NULL);
 
 	// Set period for object temperature callback to 1s (1000ms) without a threshold
 	tf_temperature_ir_v2_set_object_temperature_callback_configuration(&tir, 1000, false, 'x', 0, 0);
-
 }
 
 void example_loop(TF_HalContext *hal) {

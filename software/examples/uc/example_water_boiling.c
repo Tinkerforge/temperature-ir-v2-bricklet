@@ -20,19 +20,17 @@ void example_setup(TF_HalContext *hal) {
 	// Create device object
 	check(tf_temperature_ir_v2_create(&tir, UID, hal), "create device object");
 
-
 	// Set emissivity to 0.98 (emissivity of water, 65535 * 0.98 = 64224.299)
 	check(tf_temperature_ir_v2_set_emissivity(&tir, 64224), "call set_emissivity");
 
 	// Register object temperature reached callback to function object_temperature_handler
 	tf_temperature_ir_v2_register_object_temperature_callback(&tir,
-	                                                         object_temperature_handler,
-	                                                         NULL);
+	                                                          object_temperature_handler,
+	                                                          NULL);
 
 	// Configure threshold for object temperature "greater than 100 °C"
 	// with a debounce period of 10s (10000ms)
 	tf_temperature_ir_v2_set_object_temperature_callback_configuration(&tir, 10000, false, '>', 100*10, 0);
-
 }
 
 void example_loop(TF_HalContext *hal) {
