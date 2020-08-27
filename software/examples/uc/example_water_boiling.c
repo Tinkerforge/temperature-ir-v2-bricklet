@@ -5,16 +5,20 @@
 
 void check(int rc, const char* msg);
 
+void example_setup(TF_HalContext *hal);
+void example_loop(TF_HalContext *hal);
+
+
 // Callback function for object temperature reached callback
-void object_temperature_handler(TF_TemperatureIRV2 *device, int16_t temperature,
-                                void *user_data) {
+static void object_temperature_handler(TF_TemperatureIRV2 *device, int16_t temperature,
+                                       void *user_data) {
 	(void)device; (void)user_data; // avoid unused parameter warning
 
 	tf_hal_printf("Object Temperature: %d 1/%d °C\n", temperature, 10.0);
 	tf_hal_printf("The water is boiling!\n");
 }
 
-TF_TemperatureIRV2 tir;
+static TF_TemperatureIRV2 tir;
 
 void example_setup(TF_HalContext *hal) {
 	// Create device object
