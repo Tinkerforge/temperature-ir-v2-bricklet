@@ -18,7 +18,7 @@ static void object_temperature_handler(TF_TemperatureIRV2 *device, int16_t tempe
                                        void *user_data) {
 	(void)device; (void)user_data; // avoid unused parameter warning
 
-	tf_hal_printf("Object Temperature: %d 1/%d °C\n", temperature, 10.0);
+	tf_hal_printf("Object Temperature: %d 1/%d °C\n", temperature, 10);
 	tf_hal_printf("The water is boiling!\n");
 }
 
