@@ -24,14 +24,14 @@ void example_setup(TF_HalContext *hal) {
 	check(tf_temperature_ir_v2_get_ambient_temperature(&tir,
 	                                                   &ambient_temperature), "get ambient temperature");
 
-	tf_hal_printf("Ambient Temperature: %d 1/%d °C\n", ambient_temperature, 10.0);
+	tf_hal_printf("Ambient Temperature: %d 1/%d °C\n", ambient_temperature, 10);
 
 	// Get current object temperature
 	int16_t object_temperature;
 	check(tf_temperature_ir_v2_get_object_temperature(&tir,
 	                                                  &object_temperature), "get object temperature");
 
-	tf_hal_printf("Object Temperature: %d 1/%d °C\n", object_temperature, 10.0);
+	tf_hal_printf("Object Temperature: %d 1/%d °C\n", object_temperature, 10);
 }
 
 void example_loop(TF_HalContext *hal) {
