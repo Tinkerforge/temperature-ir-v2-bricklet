@@ -9,8 +9,8 @@
 
 void check(int rc, const char* msg);
 
-void example_setup(TF_HalContext *hal);
-void example_loop(TF_HalContext *hal);
+void example_setup(TF_HAL *hal);
+void example_loop(TF_HAL *hal);
 
 
 // Callback function for object temperature reached callback
@@ -24,7 +24,7 @@ static void object_temperature_handler(TF_TemperatureIRV2 *device, int16_t tempe
 
 static TF_TemperatureIRV2 tir;
 
-void example_setup(TF_HalContext *hal) {
+void example_setup(TF_HAL *hal) {
 	// Create device object
 	check(tf_temperature_ir_v2_create(&tir, UID, hal), "create device object");
 
@@ -41,7 +41,7 @@ void example_setup(TF_HalContext *hal) {
 	tf_temperature_ir_v2_set_object_temperature_callback_configuration(&tir, 10000, false, '>', 100*10, 0);
 }
 
-void example_loop(TF_HalContext *hal) {
+void example_loop(TF_HAL *hal) {
 	// Poll for callbacks
 	tf_hal_callback_tick(hal, 0);
 }
